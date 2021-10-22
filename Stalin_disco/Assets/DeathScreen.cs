@@ -14,8 +14,8 @@ public class DeathScreen : MonoBehaviour
 
     public void RetryButton()
     {
-        LoadScene(SceneManager.GetActiveScene().buldIndex);
-        deathScreen.SetActive(true);
+        SceneManager.LoadScene("GUI_screen");
+        deathScreen.SetActive(false);
     }
 
     public void QuitButton()
