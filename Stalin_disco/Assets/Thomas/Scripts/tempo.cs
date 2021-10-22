@@ -7,12 +7,17 @@ public class tempo : MonoBehaviour
     public bool a;
     public bool canmove;
     private SpriteRenderer spriterend;
+    private SpriteRenderer heartspriterend;
     public Sprite sa;
     public Sprite sb;
+
+    public GameObject heart; 
+    public Sprite heartdown;
+    public Sprite heartup;
     void Start()
     {
         spriterend = GetComponent<SpriteRenderer>();
-
+        heartspriterend = heart.GetComponent<SpriteRenderer>();
 
     }
 
@@ -22,10 +27,12 @@ public class tempo : MonoBehaviour
         StartCoroutine(tempoo());
         if (canmove)
         {
+            heartspriterend.sprite = heartup;
             spriterend.sprite = sb;
         }
         else
         {
+            heartspriterend.sprite = heartdown;
             spriterend.sprite = sa;
         }
         if (Input.GetKeyDown(KeyCode.Z) && canmove)
