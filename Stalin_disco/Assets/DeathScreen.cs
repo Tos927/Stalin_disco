@@ -7,14 +7,14 @@ public class DeathScreen : MonoBehaviour
 
     public static DeathScreen instance;
 
-    public void OnPlayerDeath()
-    {
-        deathScreen.SetActive(true);
-    }
+    //public void OnPlayerDeath()
+    //{
+    //    GameObject.SetActive(true);
+    //}
 
     public void RetryButton()
     {
-        SceneManager.LoadScene("GUI_screen");
+        SceneManager.LoadScene("Thomas");
         deathScreen.SetActive(false);
     }
 

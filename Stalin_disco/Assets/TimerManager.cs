@@ -9,8 +9,16 @@ public class TimerManager : MonoBehaviour
 	private bool TimerOut;
 	// Time in seconds 271s = 4m31s
 	private float timer = 271;
+	public GameObject gameOverScreen;
 
-	void Update()
+
+
+    private void Start()
+    {
+		gameOverScreen.SetActive(false);
+
+	}
+    void Update()
 	{
 		// Stop decreasing the timer if the game is paused or if the timer is at 0.
 		if (playing == true && timer >= 0)
@@ -30,9 +38,11 @@ public class TimerManager : MonoBehaviour
         if (playing == true && !TimerOut)
         {
 			TimerText.text = ("00") + ":" + ("00") + ":" + ("00");
-			
+			gameOverScreen.SetActive(true);
+			Time.timeScale = 0;
 			// Put the GameOver actions
 			Debug.Log("You Lose !!");
+
 
 
 			TimerOut = true;
